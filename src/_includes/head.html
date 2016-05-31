@@ -1,0 +1,37 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" type="text/css" href="/assets/semantic/semantic.min.css">
+
+  <!-- CSS -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/assets/stylesheets/style-3b7843a3e3.min.css">
+  <!-- endinject -->
+
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/touch/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/cmu-typewriter" type="text/css"/> 
+
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/crickx" type="text/css"/> 
+
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/old-standard" type="text/css"/>
+
+<link href='https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- RSS -->
+  {% feed_meta %}
+
+  <!-- SEO -->
+  {% seo %}
+
+</head>

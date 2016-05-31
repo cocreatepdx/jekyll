@@ -1,0 +1,299 @@
+/*
+The main SCSS file for everything, yep
+*/
+
+@import "typography";
+@import "fixedsticky";
+
+.char12 {
+	position: relative;
+	right: 5px;
+}
+
+.text-shadow {
+/*text-shadow: 2px 2px 2px rgba(249,85,115, 1);
+*/text-shadow: 4px 2px 4px rgba(0,0,0, 1);
+}
+
+.social-buttons {
+	margin-top: 2rem !important;
+}
+
+.intro {
+	color: white;
+    font-size: 2em;
+}
+
+.white {
+	color: white;
+}
+
+.typewriter-font-bold {
+	font-family: cmutypewritertextbold;
+}
+
+.at-sign {
+	color: white;
+	font-size: 3em;
+}
+
+.at-louise-and-clark {
+	bottom: 27px;
+    position: relative;
+    right: 29px;
+}
+
+
+.red {
+	color: #F95573;
+}
+
+
+.seasonal-tagline {
+	font-family: CrickxRegular;
+	font-size: 5em;
+	margin-bottom: 0;
+}
+
+.seasonal-tagline .char1,
+.seasonal-tagline .char6 {
+	position: relative;
+	bottom: 15px;
+	color: #F95573;
+}
+.seasonal-tagline .char2,
+.seasonal-tagline .char7 {
+	position: relative;
+	top: 15px;
+	color: #FBF828;
+}
+.seasonal-tagline .char3,
+.seasonal-tagline .char8 {
+	position: relative;
+	bottom: 5px;
+	color: #FBD528;
+}
+
+.seasonal-tagline .char4,
+.seasonal-tagline .char9 {
+	position: relative;
+	top: 5px;
+	color: #F9A7B7;
+}
+
+.seasonal-tagline .char5,
+.seasonal-tagline .char10 {
+	position: relative;
+	bottom: 5px;
+	color: #C4E356;
+}
+
+.seasonal-tagline .char12 {
+	position: relative;
+	bottom: 15px;
+	color: #F95573;
+}
+
+.seasonal-tagline .char13 {
+	position: relative;
+	top: 15px;
+	right: 7px;
+	color: #FBF828;
+}
+
+.seasonal-tagline .char14 {
+	position: relative;
+	bottom: 5px;
+	color: #FBD528;
+}
+
+.seasonal-tagline .char15 {
+	position: relative;
+	top: 5px;
+	color: #F9A7B7;
+}
+
+.seasonal-tagline * {
+	text-shadow: 2px 2px 2px rgba(179,18,55, 1);
+}
+
+.header {
+	margin-top: 3em;
+}
+
+.nav-logotext {
+	font-size: 2em;
+    margin-top: 25px;
+    position: absolute;
+}
+
+#instafeed {
+	position: relative;
+	top: -330px;
+}
+
+.gram-li {
+	margin-bottom: 1em;
+}
+
+.gram {
+	width: 250px !important;
+}
+
+.header-wrap {
+/*	background: url(https://source.unsplash.com/iOJGA9M2Zh4/1600x900) no-repeat center center fixed; 
+*/background: url(https://source.unsplash.com/9OKGEVJiTKk/1600x900) no-repeat center center fixed; 
+
+
+/*background: url(https://source.unsplash.com/zpkYWVAni30/1600x900) no-repeat center center fixed; 
+*/  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 47em;
+}
+/*.main-content-wrap {
+	background: url(https://source.unsplash.com/zpkYWVAni30/1600x900) no-repeat center center fixed; 
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 47em;
+}*/
+
+.ui.container.main-content {
+	margin: 7em 0;
+}
+
+.ui.small.icon.buttons {
+	margin-bottom: 10px;
+}
+
+.ui.borderless.main.menu {
+	border: none;
+    margin: 0;
+}
+
+.workshop-list {
+	padding: 0;
+}
+
+.workshop-heading {
+	margin-top: 0;
+}
+
+
+.workshop-description {
+	clear: both;
+}
+
+
+.workshop-post-content {
+	width: 25em;
+}
+
+.workshop-address {
+	padding-left: 2em;
+}
+.workshop-location-name {
+	padding-left: .5em;
+}
+
+ul {
+	list-style-type: circle;
+}
+
+.list-style-none {
+	list-style: none;
+}
+
+footer ul {
+	list-style: none;
+	padding: 0;
+}
+
+.featured {
+	margin-bottom: 3em;
+}
+
+.workshop-list-featured {
+	margin-bottom: 2em;
+	/*width: 550px;*/
+}
+
+.pay-btn {
+	margin-top: 1em !important;
+}
+
+
+.ui.sticky {
+	position: relative;
+	left: 1.5px !important;
+    top: -11px;
+    transition: top 0.5s ease-in;
+}
+
+.ui.sticky.fixed.top {
+	top:80px !important;
+	left: 211px !important;
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+.inline-links {
+	margin-right: 1em;
+}
+
+.stick {
+	position: sticky;
+	top: 180px;
+	width: 15em;
+}
+
+footer {
+	padding-bottom: 5em !important;
+/*	background: #F95573;
+*/}
+
+footer .ui.container {
+	border-top: 3px solid #F95573;
+	padding-top: 2em;
+}
+
+.tag-list {
+	list-style: none;
+	padding: 0;
+}
+
+.tag {
+	display: inline;
+}
+
+
+.mini-date {
+	float: right;
+}
+
+
+.workshop-notes {
+  margin-top: 1em;
+}
+
+.inline {
+	display: inline;
+}
+
+.floated-left {
+	float: left;
+}
+
+.logo-container {
+	margin: 15px 0;
+}
+
+.company-tagline {
+	margin-left: 15px;
+}

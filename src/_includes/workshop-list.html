@@ -1,0 +1,33 @@
+<a name="Workshops"></a>
+<h1 class="red collection-heading">Summer 2016 Collection</h1>
+<ul class="ui very relaxed divided items workshop-list">
+    {% for post in site.categories.summer-2016 reversed %}
+    <li class="item">
+        <div class="content">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                <div class="ui rounded workshop-list-featured  image">
+                    <img src="assets/images/{{ post.image }}"> {% if post.status == 'closed' %}
+                    <span class="ui large top right attached red label typewriter-font">Full</span> {% endif %}
+                </div>
+                <h1 class="workshop-heading">{{ post.title }}</h1>
+                <span class="typewriter-font-bold"><meta itemprop="startDate" content="">                         
+{% assign d = post.date | date: "%-d" %}
+{{ post.date | date: "%A" }}
+{{ post.date | date: "%B" }}
+{% case d %}
+{% when '1' or '21' or '31' %}{{ d }}st
+{% when '2' or '22' %}{{ d }}nd
+{% when '3' or '23' %}{{ d }}rd
+{% else %}{{ d }}th{% endcase %}, {{ post.date | date: "%Y" }} @ {{ post.workshop-start-time }}</span>
+                <div class="">
+                    <p>{{ post.tagline }}</p>
+                    
+                </div>
+            </a>
+            {% if post.status == 'closed' %}
+            <a>Request another future {{ post.title }} workshop.</a> {% endif %}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<!-- &emsp;Learn more &rarr; <a href="workshops/">View All (Past, Present, & Future) Workshops</a> -->

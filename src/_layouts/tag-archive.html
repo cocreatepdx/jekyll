@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+  {% include archive-aside.html %}
+<div id="context" class="ui eleven wide computer sixteen wide tablet sixteen wide mobile column">
+  {% include posts-with-tag-list.html %}
+</div>
+
+
+<!-- <h1>Blogposts Tagged {{ page.title }}</h1>
+<ul class="posts">
+  {% for post in page.posts %}
+  	{% if post.categories contains 'blog' %}
+    <li>
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul> -->

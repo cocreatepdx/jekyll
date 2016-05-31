@@ -1,0 +1,24 @@
+<h1>{{ page.title | capitalize}}</h1>
+<ul class="ui divided items">
+  {% for post in page.posts %}
+  <li class="item">
+        <div class="ui small rounded image">
+            <img src="{{ site.url }}/assets/images/{{ post.image }}">
+        </div>
+        <div class="content">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                <span class="mini-title">{{ post.title }}</span>
+                <span class="mini-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <p>{{ post.tagline }}</p>
+                <span>Category: {{ post.categories | first }}</span>
+            </a>
+            </span>
+    </li>
+
+  {% endfor %}
+</ul>
+
+   <!--  <li class="item">
+      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </li> -->

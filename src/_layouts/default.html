@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+    {% include header.html %}
+    <div class="ui grid container main-content">
+        {{ content }}
+    </div>
+    {% include footer.html %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="/assets/semantic/semantic.min.js"></script>
+    <script src="/assets/javascript/vendor/fixedsticky.js"></script>
+
+<script>
+      $(document).ready(function() {
+        $( '#aside' ).fixedsticky();
+      });
+</script>
+    <!-- JS -->
+    <!-- inject:js -->
+    <script src="/assets/javascript/index-3d38c25288.min.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>

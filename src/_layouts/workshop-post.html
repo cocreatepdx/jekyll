@@ -1,0 +1,19 @@
+--- 
+layout: default 
+---
+<div class="ui left floated ten wide computer sixteen wide tablet sixteen wide mobile column">
+    <article class="post" itemscope itemtype="https://schema.org/Event">
+        <img class="ui fluid featured image" src="{{ site.url }}/assets/images/{{ page.image }}">
+        <header class="post-header">
+            <p class="tagline" itemprop="">{{ page.tagline }}</p>
+            <p class="post-meta">
+                {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+        </header>
+        <div itemprop="articleBody">
+            {{ content }}
+        </div>
+    </article>
+</div>
+{% include workshop-post-aside.html %}
+
+<!-- http://fpoimg.com/2000x1000?text=Preview -->

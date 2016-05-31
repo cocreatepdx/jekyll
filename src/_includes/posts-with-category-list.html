@@ -1,0 +1,24 @@
+<h1>{{ page.title | capitalize }}</h1>
+<ul class="ui divided items">
+{% assign curDate = site.time | date: '%s' %}
+    {% for post in page.posts %}
+    <li class="item">
+        <div class="ui tiny rounded image">
+            <img src="{{ site.url }}/assets/images/{{ post.image }}">
+        </div>
+        <div class="content">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                <div class="mini-title">{{ post.title }}</div>
+                {% assign postStartDate = post.date | date: '%s' %}
+    {% if post.categories contains 'workshops' and postStartDate >= curDate %}
+Upcoming!
+    {% endif %}
+                <p>{{ post.date | date: "%b %-d, %Y" }}&emsp;&emsp;{{ post.tagline }}</p>
+            </a>
+              {% if post.categories contains 'workshops' and postStartDate < curDate %}
+    Want to see this in workshop again? <a href="">Request it!</a>
+  {% endif %}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
