@@ -1,19 +1,30 @@
 --- 
-layout: default 
+layout: post 
 ---
-<div class="ui left floated ten wide computer sixteen wide tablet sixteen wide mobile column">
-    <article class="post" itemscope itemtype="https://schema.org/Event">
-        <img class="ui fluid featured image" src="{{ site.url }}/assets/images/{{ page.image }}">
-        <header class="post-header">
-            <p class="tagline" itemprop="">{{ page.tagline }}</p>
-            <p class="post-meta">
-                {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-        </header>
-        <div itemprop="articleBody">
+{% assign curDate = site.time | date: '%s' %}
+{% assign postStartDate = page.date | date: '%s' %}
+
+<article class="ui grid container main-content" vocab="http://schema.org/" typeof="Event">
+    <div class="ui left floated ten wide computer sixteen wide tablet sixteen wide mobile column">
+        <img class="ui fluid rounded featured image" alt="{{ page.image-alt-text }}" src="{{ site.url }}/assets/images/{{ page.image }}">
+        <p class="tagline">{{ page.tagline }}</p>
+        <div>
             {{ content }}
         </div>
-    </article>
-</div>
+        {% if page.categories contains 'workshops' and postStartDate > curDate %}
+        <div class="typewriter-font social-buttons">
+            <p>Add to your calendar and invite your friends:</p>
+            <a target="_blank" class="item" href="{{ page.google-calendar }}" data-content="Add to Google Calendar" data-variation="basic">
+                <i class="calendar icon"></i>
+            </a>
+            <a href="{{ page.facebook-post }}" data-content="Invite Friends" data-variation="basic">
+                <i class="facebook icon"></i>
+            </a>
+            <a class="item" href="{{ page.tweet }}" data-content="Share on Twitter" data-variation="basic">
+                <i class="twitter icon"></i>
+            </a>
+        </div>
+        {% endif %}
+    </div>
 {% include workshop-post-aside.html %}
-
-<!-- http://fpoimg.com/2000x1000?text=Preview -->
+</article>

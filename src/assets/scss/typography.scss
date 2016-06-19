@@ -28,7 +28,9 @@ h1,h2,h3,h4,h5,h6 {
 
 .aside-heading {
     font-style: normal;
+    font-weight: 700;
 	margin-bottom: 10px;
+	font-family: 'Old Standard TT';
 }
 
 .typewriter-font {
@@ -41,7 +43,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .collection-heading {
-	margin-bottom: 1.5em;
+	margin: 1em 0 1.5em 0 !important;
 	font-style: normal;
 	text-transform: uppercase;
 }

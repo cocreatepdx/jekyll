@@ -139,10 +139,10 @@ gulp.task('inject:head', () =>
 
 // 'gulp inject:footer' -- injects our index.js file into the end of our HTML
 gulp.task('inject:footer', () =>
-  gulp.src('src/_layouts/default.html')
+  gulp.src('src/_includes/javascript-inject.html')
     .pipe($.inject(gulp.src('.tmp/assets/javascript/*.js',
                             {read: false}), {ignorePath: '.tmp'}))
-    .pipe(gulp.dest('src/_layouts'))
+    .pipe(gulp.dest('src/_includes'))
 );
 
 // 'gulp images' -- optimizes and caches your images

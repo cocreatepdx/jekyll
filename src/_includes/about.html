@@ -1,75 +1,56 @@
-<a name="About"></a>
-<img class="ui fluid image featured" src="http://fpoimg.com/2000x1000?text=Preview">
-<div class="content">
-    <div class="description">
-        <p>Do you call yourself an eclectic expert or delighted dilettante? A maker at heart - or maybe a budding artist? Would you like to explore more of your creative side and meet new people in Portland?</p>
-        <p>Louise & Clark offers seasonal collections of creative workshops where you can  craft memorable art and gifts with friends.</p>
-        <p>The creators of Louise & Clark:</p>
+<a id="About"></a>
+<br>
+<section class="about-section">
+    <h1 class="visuallyhidden">About</h1>
+    <section>
+        <img class="ui fluid image featured" src="{{ site.url }}/assets/images/intro.jpg">
+        <h1 class="visuallyhidden">Introduction</h1>
+        <p class="tagline">{{ site.title }} offers creative workshops in Portland, Oregon, where like-minded explorers can make memorable art and gifts together.</p>
+        <p>Do you call yourself an eclectic expert or delighted dilettante? A maker at heart -- or maybe a budding artist? Would you like to explore more of your creative side and meet new people in Portland?</p>
+        <p>{{ site.title }} offers a variety of creative workshops where you do just that! Become an explorer and help determine upcoming workshops -- <a href="https://nekodiablo.typeform.com/to/DRbJTM" data-mode="1" target="_blank">share what you want to learn and make.</a>
+            <script>
+            (function() {
+                var qs, js, q, s, d = document,
+                    gi = d.getElementById,
+                    ce = d.createElement,
+                    gt = d.getElementsByTagName,
+                    id = 'typef_orm',
+                    b = 'https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
+                if (!gi.call(d, id)) {
+                    js = ce.call(d, 'script');
+                    js.id = id;
+                    js.src = b + 'share.js';
+                    q = gt.call(d, 'script')[0];
+                    q.parentNode.insertBefore(js, q)
+                }
+                id = id + '_';
 
-<div class="ui items">
-    <div class="item">
-        <div class="ui small circular image">
-            <img src="assets/images/profile.jpg">
-        </div>
-        <div class="content">
-            <p>Hi, I'm Christopher - the Graphic Designer (BFA).</p>
-            <dl>
-                <dt>Favorite Phrase:</dt>
-                <dd>"Trust the Process"</dd>
-                <dt></dt>
-                <dd></dd>
-            </dl>
-            </p>
-        </div>
-    </div>
-    <div class="item">
-        <div class="ui small circular image">
-            <img src="assets/images/tricia-profile.jpg">
-        </div>
-        <div class="content">
-            <p>Hi, I'm Tricia - the Illustrator (BFA).</p>
-            <dl>
-                <dt>Favorite Phrase:</dt>
-                <dd>"Makers gonna make."</dd>
-                <dt></dt>
-                <dd></dd>
-            </dl>
-            </p>
-        </div>
-    </div>
-</div>
-
-
-        <p>We love to share and cocreate - this is the summer to meet and make!</p>
-    </div>
-</div>
-
-
-
-
-
-
-<!--     <div class="eight wide column ui items">
-        <div class="item">
-            <div class="ui circular image">
-                <img src="/assets/images/profile.jpg">
+            })()
+            </script>
+        </p>
+    </section>
+    <section>
+        <h1 class="lc-team">Meet the Creators</h1>
+        <div class="ui stackable mobile reversed grid">
+            <div class="twelve wide column">
+                <p>Hi, my name is <span class="fill-in">Tricia</span> and my background is in <span class="fill-in">Illustration & Design</span>. I love listening to <span class="fill-in">audiobooks & Vector Lovers</span> and want to learn more about <span class="fill-in">Web Design & working with polymer clay</span>. If I could travel anywhere in the world, I would love to check out <span class="fill-in">Greece & Iceland</span>. My favorite quote is
+                    <q class="fill-in">Life would be tragic if it weren't funny.</q> -- Stephen Hawking</p>
             </div>
-            <div class="content">
-                <div>Christopher</div>
-                <div class="description">
-                    <p>Christopher is a designer based out of Portland, Oregon. He holds a Bachelor of Fine Art in Graphic Design and Bachelor of Science in Business Administration, Computer Information Systems.</p>
+            <div class="four wide column">
+                <div class="ui small circular image">
+                    <img alt="Tricia" src="assets/images/tricia-square.jpg">
+                </div>
+            </div>
+            <div class="twelve wide column">
+                <p>Hi, my name is <span class="fill-in">Christopher</span> and my background is in <span class="fill-in">graphic design</span>. I love listening to <span class="fill-in">Beethoven</span> and want to learn more about <span class="fill-in">paper marbling</span>. If I could travel anywhere in the world, I would love to check out <span class="fill-in">New Zealand & Sweden</span>. My favorite quote is
+                    <q class="fill-in">Trust the process.</q>
+                </p>
+            </div>
+            <div class="four wide column">
+                <div class="ui small circular image">
+                    <img alt="Christopher" src="assets/images/profile.jpg">
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="ui circular image">
-                <img src="/assets/images/tricia-profile.jpg">
-            </div>
-            <div class="content">
-                <div>Tricia</div>
-                <div class="description">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    </section>
+</section>

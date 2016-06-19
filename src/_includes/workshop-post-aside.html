@@ -1,47 +1,61 @@
-{% assign curDate = site.time | date: '%s' %} {% assign postStartDate = page.date | date: '%s' %}
+{% assign curDate = site.time | date: '%s' %} {% assign postStartDate = page.date | date: '%s' %} {% assign twoWeeks = postStartDate | minus : 1209600 | date: '%s' %} {% assign twoWeeksText = postStartDate | minus : 1209600 | date: "%b %d" | uri_encode | replace:"+","%20" %}
 <div class="ui five wide computer nine wide tablet sixteen wide mobile column">
     <div id="aside" class="fixedsticky stick">
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><h1 class="workshop-heading italic" itemprop="name headline">{{ page.title }}</h1></a>
+        <header class="post-header">
+            <h1 class="workshop-heading" property="name">{{ page.title }} Workshop</h1>
+        </header>
         <div class="workshop-notes">
-            <div class="typewriter-font"><i class="calendar outline icon"></i>
-                <meta itemprop="startDate" content="2016-04-21T20:00"> {{ page.date | date: '%A %b. %-d, %-Y' }}</div>
-            <div class="typewriter-font"><i class="wait outline icon"></i>
-                <meta itemprop="startDate" content="2016-04-21T20:00">{{ page.workshop-start-time }} &ndash; {{ page.workshop-end-time }}</div>
-            <div itemprop="location" itemscope itemtype="http://schema.org/Place">
-                <div class="typewriter-font" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                    <div itemprop="addressLocality"><i class="marker icon"></i><span class="workshop-location-name">{{ page.location-name }}</span><br><p class="workshop-address">{{ page.address}}</p></div>
-                </div>
-            </div>
 
-             <div class="typewriter-font"><i class="users icon"></i>
-             {{ page.guests }} Creative Explorers
-            </div>
-        </div>
-        {% if page.categories contains 'workshops' and postStartDate
-        < curDate %} We had a lovely time at the {{ page.title }} workshop. Do you want to see this in workshop again? <a>Request a future {{ page.title }} workshop.</a>
-            {% elsif page.status == 'closed' %}
+            {% if page.categories contains 'workshops' and postStartDate
+            < curDate %} 
 
-            <span class="ui large red label typewriter-font">Full</span>
+            <p>We had a lovely time at the {{ page.title }} workshop. Do you want to see this in workshop again? <a>Request a future {{ page.title }} workshop.</a>
+            </p>
 
-             <a>Request another future {{ page.title }} workshop.</a>
+                {% elsif page.status == 'closed' %}
 
-            {% else %}
-            <div class="ui left labeled button pay-btn" tabindex="0">
-                <a class="ui basic right label typewriter-font">
-                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                        <div itemprop="price" content="75.00">{{ page.workshop-price }}</div>
+                <span class="ui large red label typewriter-font">Full</span>
+                <a>Request another future {{ page.title }} workshop.</a> 
+
+                {% else %}
+
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="{{ page.paypal-id }}">
+                    <div class="ui left labeled button pay-btn" property="offers" typeof="Offer" tabindex="0">
+                        <a class="ui basic right label typewriter-font">
+                            <div>
+                             <meta property="priceCurrency" content="USD" />
+                            <meta property="price" content="{{ page.workshop-price }}" />
+                                <span content="{{ page.workshop-price }}">{{ page.workshop-price | prepend: '$' }}</span>
+                            </div>
+                        </a>
+                        <button type="submit" class="ui primary button">
+                            <span class="typewriter-font">PayPal</span>
+                            <i class="right chevron icon"></i>
+                        </button>
                     </div>
-                </a>
-                <div class="ui primary button">
-                    <span class="typewriter-font">PayPal</span>
-                    <i class="right chevron icon"></i>
+                </form>
+
+                <div class="typewriter-font">
+                <i class="calendar outline icon"></i>
+                <span property="startDate" content="{{ page.date | date: '%F' }}">{{ page.date | date: '%a %b %-d, %-Y' }}</span>
                 </div>
-            </div>
-            <div class="ui small icon buttons social-buttons">
-            <a class="ui button" href="{{ page.facebook-post }}" data-content="Invite Friends"><i class="facebook icon"></i></a>
-            <a class="ui button" href="{{ page.google-calendar }}" data-content="Add to Google Calendar"><i class="calendar icon"></i></a>
-            <a class="ui button"  href="{{ page.tweet }}"data-content="Share on Twitter"><i class="twitter icon"></i></a>
+                <div class="typewriter-font"><i class="wait outline icon"></i>
+                    <span>{{ page.workshop-start-time }} &ndash; {{ page.workshop-end-time }}</span>
+                </div>
+                <div class="typewriter-font" property="location" typeof="Place">
+                    <i class="marker icon"></i>
+                    <span property="name">{{ page.location-name }}</span>
+                    <div class="typewriter-font workshop-location" property="address" typeof="PostalAddress">
+                        <span property="streetAddress">{{ page.location-street-address }}</span>
+                        <span property="addressLocality">{{ page.location-locality }}, </span>
+                        <span property="addressRegion">{{ page.location-region }}</span>
+                        <span property="postalCode">{{ page.location-postal-code }}</span>
+                    </div>
+                    <div class="typewriter-font"><i class="users icon"></i> {{ page.guests }} Explorers (max)
+                    </div>
+                </div>
+                {% endif %}
         </div>
-            {% endif %}
     </div>
-</div>

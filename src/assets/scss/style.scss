@@ -16,7 +16,24 @@ The main SCSS file for everything, yep
 }
 
 .social-buttons {
-	margin-top: 2rem !important;
+	margin-top: 1em !important;
+}
+
+header.ui.borderless.main.menu {
+	box-shadow: none;
+}
+
+.main-menu-container {
+	height: 73px;
+    padding-bottom: 0 !important;
+    margin: 0rem !important;
+    border-bottom: 1px solid red;
+}
+
+.main-menu {
+	height: 90px;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
 }
 
 .intro {
@@ -122,8 +139,8 @@ The main SCSS file for everything, yep
 }
 
 .nav-logotext {
-	font-size: 2em;
-    margin-top: 25px;
+    font-size: 1.65em;
+    margin-top: 12px;
     position: absolute;
 }
 
@@ -142,7 +159,11 @@ The main SCSS file for everything, yep
 
 .header-wrap {
 /*	background: url(https://source.unsplash.com/iOJGA9M2Zh4/1600x900) no-repeat center center fixed; 
-*/background: url(https://source.unsplash.com/9OKGEVJiTKk/1600x900) no-repeat center center fixed; 
+*/
+
+/*background: url(https://source.unsplash.com/9OKGEVJiTKk/1600x900) no-repeat center center fixed; 
+*/
+background: url(../images/postcard-beach.jpg) no-repeat center center fixed; 
 
 
 /*background: url(https://source.unsplash.com/zpkYWVAni30/1600x900) no-repeat center center fixed; 
@@ -163,7 +184,7 @@ The main SCSS file for everything, yep
 }*/
 
 .ui.container.main-content {
-	margin: 7em 0;
+	margin: 1em 0;
 }
 
 .ui.small.icon.buttons {
@@ -181,6 +202,7 @@ The main SCSS file for everything, yep
 
 .workshop-heading {
 	margin-top: 0;
+	font-size: 1.8em;
 }
 
 
@@ -196,8 +218,9 @@ The main SCSS file for everything, yep
 .workshop-address {
 	padding-left: 2em;
 }
-.workshop-location-name {
-	padding-left: .5em;
+
+.workshop-location {
+	padding-left: 2em;
 }
 
 ul {
@@ -224,10 +247,11 @@ footer ul {
 
 .pay-btn {
 	margin-top: 1em !important;
+	margin-bottom: 1em !important;
 }
 
 
-.ui.sticky {
+/*.ui.sticky {
 	position: relative;
 	left: 1.5px !important;
     top: -11px;
@@ -238,7 +262,7 @@ footer ul {
 	top:80px !important;
 	left: 211px !important;
 }
-
+*/
 nav ul {
 	list-style-type: none;
 }
@@ -248,8 +272,8 @@ nav ul {
 }
 
 .stick {
-	position: sticky;
-	top: 180px;
+	/*position: sticky;*/
+	top: 115px;
 	width: 15em;
 }
 
@@ -258,8 +282,8 @@ footer {
 /*	background: #F95573;
 */}
 
-footer .ui.container {
-	border-top: 3px solid #F95573;
+footer div.ui.container {
+	border-top: 3px solid #F95573 !important;
 	padding-top: 2em;
 }
 
@@ -296,4 +320,146 @@ footer .ui.container {
 
 .company-tagline {
 	margin-left: 15px;
+}
+
+s {
+  display: inline-block;
+  position: relative;
+  font-size: 22px;
+}
+
+s:before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  height: 3px; /* ADJUST HEIGHT TO ADD WEIGHT */
+  background: red; /* CHANGE COLOR TO SUIT */
+}
+
+.workshop-aside-title {
+	font-size: 1.5em;
+    margin-bottom: 0;
+}  
+
+.green {
+	color: green;
+}
+
+.padded {
+	margin: 1em 0 2em 0;
+}
+
+.main-nav {
+	float: right;
+}
+
+.main-nav ul {
+	padding-left: 0;
+}
+
+article ul li {
+	margin-top: .5em;
+}
+
+.notification {
+	font-weight: 400 !important;
+	line-height: 1.5em;
+}
+
+.about-section {
+	margin-bottom: 4em;
+}
+
+.fill-in {
+	border-bottom: 1px solid black;
+	padding: 0 5px;
+	font-family: "cmutypewritertextregular";
+}
+
+.checkmark {
+	margin-left: .5em !important;
+}
+
+.alt-link {
+	color: #111;
+}
+
+.alt-link:hover {
+	color: cornflowerblue;
+}
+
+.nav-link:hover {
+	color: cornflowerblue;
+}
+
+.lc-team {
+	margin: 1em 0 !important;
+}
+
+/*body {
+	height: 100%;
+}
+
+.wrap {
+min-height:100%;
+   position:relative;
+}
+
+.main-content {
+   padding-bottom:60px !important;
+   height:100%;
+}
+footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+}*/
+
+
+
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+
+#aside {
+	border-top: 1px solid red;
+	padding-top: 1em;
+}
+
+.nav-logotext {
+	font-family: cmutypewritertextbold;
+    font-size: 1.4em;
+    margin-top: 20px;
+    position: absolute;
+}
+
+.inline-links {
+	margin-right: .5em;
+}
+
+article ul {
+	padding-left: 1em;
+}
+
+/*.ui.grid.conatainer.main-content {
+	margin: 0 !important;
+}*/
+}
+
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Small Monitor */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+} 
+
+/* Large Monitor */
+@media only screen and (min-width: 1200px) {
+
 }

@@ -5,33 +5,11 @@ $(document)
         $('.main.menu').visibility({
             type: 'fixed'
         });
-        // $('.ui.sticky').sticky({
-        //         offset: 80,
-        //         bottomOffset: 80,
-        //         context: '#context'
-        //         //pushing: true
-        //         //observeChanges: true
-        //     });
-        // // $('.ui.sticky').visibility({
-        // //     type: 'fixed',
-        // //     offset: 80
-        // // });
 
-        // // lazy load images
-        // $('.image').visibility({
-        //     type: 'image',
-        //     transition: 'vertical flip in',
-        //     duration: 500
-        // });
-
-        // // show dropdown on hover
-        // $('.main.menu  .ui.dropdown').dropdown({
-        //     on: 'hover'
-        // });
         $('.ui.accordion')
             .accordion();
 
-        $('.button')
+        $('.social-buttons a')
             .popup();
 
         $(function() {
@@ -50,3 +28,15 @@ $(document)
         });
 
     });
+
+$(window).on('load, resize', function mobileViewUpdate() {
+    var viewportWidth = $(window).width();
+    if (viewportWidth < 991) {
+        // $("#aside").removeClass("fixedsticky stick fixedsticky-on fixedsticky-off");
+        $("#aside").fixedsticky("destroy");
+    }
+    if (viewportWidth > 991) {
+        $("#aside").addClass("fixedsticky stick fixedsticky-on");
+    }
+});
+

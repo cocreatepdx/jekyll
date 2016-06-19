@@ -1,19 +1,22 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+{% include head.html %}
 
-{% include blogpost-aside.html %}
-<div class="ui eleven wide computer sixteen wide tablet sixteen wide mobile column">
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
+<body>
+    {% include header.html %}
     {{ content }}
-  </div>
+    {% include footer.html %}
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="/assets/semantic/semantic.min.js"></script>
+    <script src="/assets/javascript/vendor/fixedsticky.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#aside').fixedsticky();
+    });
+    </script>
+    {% include javascript-inject.html %}
+    {% include google-analytics.html %}
+</body>
 
-</article>
-</div>
+</html>

@@ -3,45 +3,23 @@
 {% include head.html %}
 
 <body>
-    {% include home-featured.html %} {% include header.html %}
+    {% include header.html %}
     <div class="ui grid container main-content">
         {{ content }}
     </div>
-   {% include footer.html %}
+    {% include footer.html %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="/assets/semantic/semantic.min.js"></script>
-
-    <script src="/assets/javascript/vendor/instafeed.min.js"></script>
-
-{% assign gram-url = '{{image}}' %}
-{% assign gram-link = '{{link}}' %}
-
-<script type="text/javascript">
-    var userFeed = new Instafeed({
-        get: 'user',
-        userId: '3026568333',
-        accessToken: '3026568333.1677ed0.dfb5f461bebc4822b35fcd04f813b7ab',
-        limit: 3,
-        resolution: 'standard_resolution',
-        template: '<li class="gram-li"><a href="{{gram-link}}"><img class="ui small rounded image gram" src="{{gram-url}}" /></a></li>'
+    <script src="/assets/javascript/vendor/fixedsticky.js"></script>
+   
+    <script>
+    $(document).ready(function() {
+        $('#aside').fixedsticky();
     });
-    userFeed.run();
-</script>
-
-<script src="/assets/javascript/vendor/fixedsticky.js"></script>
-<script src="/assets/javascript/vendor/jquery.lettering.js"></script>
-
-<script>
-      $(document).ready(function() {
-        $(".seasonal-tagline").lettering();
-        $( '#aside' ).fixedsticky();
-      });
-</script>
-
-    <!-- JS -->
-    <!-- inject:js -->
-     <script src="/assets/javascript/index-3d38c25288.min.js"></script>
-    <!-- endinject -->
+    
+    </script>
+    {% include javascript-inject.html %}
+    {% include google-analytics.html %}
 </body>
 
 </html>
